@@ -1,0 +1,4 @@
+.popup__form.popup__form_is-hidden {
+  display: none;
+  border: 20px solid crimson;
+}

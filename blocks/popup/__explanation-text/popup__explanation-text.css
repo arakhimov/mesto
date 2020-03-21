@@ -1,0 +1,14 @@
+@import url(./_active/popup__explanation-text_active.css);
+
+.popup__explanation-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  margin: 0;
+  padding: 0;
+}
+.popup__explanation-text:first-of-type {
+  margin-bottom: 10px;
+}
