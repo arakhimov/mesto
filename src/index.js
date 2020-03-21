@@ -36,7 +36,7 @@ import './style.css';
   // классы
   // обмен данными с сервером
   const api = new Api({
-    baseUrl: 'https://praktikum.tk/cohort8',
+    baseUrl: process.env.NODE_ENV==='development' ? 'http://praktikum.tk/cohort8' : 'https://praktikum.tk/cohort8',
     headers: {
       authorization: 'bdc62542-0425-49bb-96fc-ec4d621a5e2b',
       'Content-Type': 'application/json'
@@ -59,11 +59,11 @@ import './style.css';
 
   // получение данных карточек
   api.getInitialCards()
-    .then(cardArray => {
-    const filteredCardArray = cardArray.filter(card => card.owner._id === 'c4428527249f042fd506f38a');    
-    cardList.render(filteredCardArray, card);
-    })
-    // .then(cardArray => cardList.render(cardArray, card))
+    // .then(cardArray => {
+    // const filteredCardArray = cardArray.filter(card => card.owner._id === 'c4428527249f042fd506f38a');    
+    // cardList.render(filteredCardArray, card);
+    // })
+    .then(cardArray => cardList.render(cardArray, card))
     .catch(err => console.log(err));
 
 
