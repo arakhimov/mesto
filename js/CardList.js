@@ -1,5 +1,5 @@
 //хранение и отрисовка карточек
-class CardList {
+export default class CardList {
   constructor(container, popup, popupElement) {
     this.container = container;
     // переменная и экземпляр класса для открытия картинки в развернутом виде

@@ -1,3 +1,12 @@
+import Api from '../js/Api.js';
+import Card from '../js/Card.js';
+import CardList from '../js/CardList.js';
+import FormValidator from '../js/FormValidator.js';
+import Popup from '../js/Popup.js';
+import UserInfo from '../js/UserInfo.js';
+
+import './style.css';
+
 (function () {
     // контейнер для карточек
   const placesList = document.querySelector('.places-list');

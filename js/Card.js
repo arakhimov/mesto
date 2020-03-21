@@ -1,5 +1,5 @@
 // создание карточек
-class Card {
+export default class Card {
   constructor(elementPopup, userInfoWrapper) {
     this.popup = elementPopup;
     this.userInfoWrapper = userInfoWrapper;
