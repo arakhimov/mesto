@@ -1,26 +1,30 @@
+// подключение библиотек
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+// переменная окружения
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: {main: './src/index.js'},
   output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: '[name].[chunkhash].js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[chunkhash].js'
   },
   module: {
-    rules: [{ 
+    rules: [
+      { 
         test: /\.js$/, // регулярное выражение, которое ищет все js файлы
         use: { loader: "babel-loader" }, // весь JS обрабатывается пакетом babel-loader
         exclude: /node_modules/ // исключает папку node_modules
       },
       {
         test: /\.css$/i, // применять это правило только к CSS-файлам
-        use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader'] // к этим файлам нужно применить пакеты, которые мы уже установили
+        use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader'] 
       },
       {
         test: /\.(png|jpe?g|gif|ico|svg)$/,
@@ -43,9 +47,7 @@ module.exports = {
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-              preset: ['default'],
-      },
+      cssProcessorPluginOptions: {preset: ['default'],},
       canPrint: true
     }),
     new HtmlWebpackPlugin({
