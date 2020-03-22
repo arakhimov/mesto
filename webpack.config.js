@@ -23,9 +23,9 @@ module.exports = {
         use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader'] // к этим файлам нужно применить пакеты, которые мы уже установили
       },
       {
-        test: /\.(png|jpg|gif|ico|svg)$/,
+        test: /\.(png|jpe?g|gif|ico|svg)$/,
         use: [
-          'file-loader?name=../images/[name].[ext]',
+          'file-loader?name=./images/[name].[ext]',
           {
             loader: 'image-webpack-loader',
             options: {}
@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/fonts/[name].[ext]'
+        loader: 'file-loader?name=./fonts/[name].[ext]'
       }
     ]
   },
