@@ -32,7 +32,7 @@ import './style.css';
     link: 'Должна быть ссылка'
   };
 
-  console.log(process.env.NODE_ENV);
+  
   // классы
   // обмен данными с сервером
   const api = new Api({
