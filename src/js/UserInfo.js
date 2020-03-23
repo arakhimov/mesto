@@ -1,5 +1,5 @@
 // данные пользователя
-class UserInfo {
+export default class UserInfo {
   constructor(container, form, api) {
     this.container = container;
     this.form = form;

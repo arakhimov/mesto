@@ -1,4 +1,4 @@
-class Popup {
+export default class Popup {
   //открытие меню
   open(elementPopup) {
     this.element = elementPopup;

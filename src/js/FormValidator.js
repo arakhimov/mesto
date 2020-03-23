@@ -1,5 +1,5 @@
 // валидация полей формы
-class FormValidator {
+export default class FormValidator {
   constructor(wordTemplate) {
     this.wordTemplate = wordTemplate;
   }
