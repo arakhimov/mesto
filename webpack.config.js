@@ -27,7 +27,7 @@ module.exports = {
         use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader'] 
       },
       {
-        test: /\.(png|jpe?g|gif|ico|svg)$/,
+        test: /\.(png|jpe?g|gif|ico|svg)$/, // для изображений
         use: [
           'file-loader?name=./images/[name].[ext]',
           {
@@ -37,7 +37,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(eot|ttf|woff|woff2)$/,
+        test: /\.(eot|ttf|woff|woff2)$/, //для шрифтов
         loader: 'file-loader?name=./fonts/[name].[ext]'
       }
     ]
