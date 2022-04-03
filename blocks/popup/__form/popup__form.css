@@ -1,0 +1,5 @@
+@import url(./_is-hidden/popup__form_is-hidden.css);
+
+.popup__form {
+  margin-top: 45px;
+}
